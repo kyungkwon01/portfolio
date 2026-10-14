@@ -1,29 +1,20 @@
+import Header from './components/Header'
 import Hero from './components/Hero'
 import Projects from './components/Projects'
 import About from './components/About'
 import Contact from './components/Contact'
-import './App.css'
 
 function App() {
   return (
     <>
-      <header className="nav">
-        <a href="#hero" className="nav-name">
-          Kyung Kwon
-        </a>
-        <nav>
-          <a href="#projects">Projects</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
-      <main>
+      <Header />
+      <main className="mx-auto max-w-4xl px-6">
         <Hero />
         <Projects />
         <About />
         <Contact />
       </main>
-      <footer className="footer">
+      <footer className="mx-auto max-w-4xl px-6 py-10 text-sm text-zinc-500">
         © {new Date().getFullYear()} Kyung Kwon
       </footer>
     </>
