@@ -14,11 +14,11 @@ function App() {
         <About />
         <Contact />
       </main>
-      <footer className="mx-auto max-w-4xl px-6 py-10 text-sm text-zinc-500">
+      <footer className="mx-auto max-w-4xl px-6 py-10 text-sm text-muted">
         © {new Date().getFullYear()} Kyung Kwon
       </footer>
     </>
   )
 }
 
-export default App
+export default App 

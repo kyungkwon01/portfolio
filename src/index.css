@@ -2,6 +2,39 @@
 
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Cobalt palette. Light values here; dark values are overridden below. */
+  --color-canvas: #f8fafc;
+  --color-surface: #ffffff;
+  --color-line: #e2e8f0;
+  --color-line-strong: #cbd5e1;
+  --color-ink: #0f172a;
+  --color-body: #334155;
+  --color-muted: #64748b;
+  --color-accent: #2b50d6;
+  --color-accent-hover: #1e3bb0;
+  --color-on-accent: #ffffff;
+  --color-chip: #e8eeff;
+  --color-chip-ink: #2238a8;
+}
+
+/* index.html sets data-theme from the saved choice or the OS setting. */
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-canvas: #0b1020;
+  --color-surface: #121931;
+  --color-line: #232c4a;
+  --color-line-strong: #34406a;
+  --color-ink: #f1f5f9;
+  --color-body: #cbd5e1;
+  --color-muted: #8a96b0;
+  --color-accent: #7c9bff;
+  --color-accent-hover: #a3b8ff;
+  --color-on-accent: #0b1020;
+  --color-chip: #1a2550;
+  --color-chip-ink: #b8c8ff;
 }
 
 @utility no-scrollbar {

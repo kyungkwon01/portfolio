@@ -82,15 +82,15 @@ function Projects() {
   }
 
   const arrowClass =
-    'grid size-9 place-items-center rounded-full border border-zinc-300 text-zinc-900 transition hover:border-zinc-900 dark:border-zinc-700 dark:text-zinc-100 dark:hover:border-zinc-100'
+    'grid size-9 place-items-center rounded-full border border-line-strong text-ink transition hover:border-ink'
 
   return (
     <section
       id="projects"
-      className="border-t border-zinc-200 py-20 dark:border-zinc-800"
+      className="border-t border-line py-20"
     >
       <div className="mb-10 flex items-center justify-between">
-        <h2 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
+        <h2 className="text-sm font-semibold uppercase tracking-widest text-muted">
           Projects
         </h2>
         <div className="flex gap-2">
@@ -127,9 +127,9 @@ function Projects() {
         {projects.map((project) => (
           <li
             key={project.title}
-            className="flex w-72 shrink-0 snap-start flex-col rounded-2xl border border-zinc-200 p-6 transition hover:border-zinc-400 hover:shadow-sm sm:w-80 dark:border-zinc-800 dark:hover:border-zinc-600"
+            className="flex w-72 shrink-0 snap-start flex-col rounded-2xl border border-line p-6 transition hover:border-line-strong hover:shadow-sm sm:w-80"
           >
-            <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+            <h3 className="text-lg font-semibold text-ink">
               {project.title}
             </h3>
             <p className="mt-2 leading-relaxed">{project.description}</p>
@@ -137,14 +137,14 @@ function Projects() {
               {project.tags.map((tag) => (
                 <li
                   key={tag}
-                  className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
+                  className="rounded-full bg-chip px-2.5 py-0.5 text-xs font-medium text-chip-ink"
                 >
                   {tag}
                 </li>
               ))}
             </ul>
             {(project.link || project.repo) && (
-              <div className="mt-5 flex gap-5 text-sm font-medium text-zinc-900 dark:text-zinc-100">
+              <div className="mt-5 flex gap-5 text-sm font-medium text-accent">
                 {project.link && (
                   <a
                     href={project.link}
