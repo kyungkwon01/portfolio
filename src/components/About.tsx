@@ -2,8 +2,8 @@ const skills = ['Skill one', 'Skill two', 'Skill three']
 
 function About() {
   return (
-    <section id="about" className="border-t border-zinc-200 py-20 dark:border-zinc-800">
-      <h2 className="mb-10 text-sm font-semibold uppercase tracking-widest text-zinc-500">
+    <section id="about" className="border-t border-line py-20">
+      <h2 className="mb-10 text-sm font-semibold uppercase tracking-widest text-muted">
         About
       </h2>
       <p className="max-w-2xl text-lg leading-relaxed">
@@ -14,7 +14,7 @@ function About() {
         {skills.map((skill) => (
           <li
             key={skill}
-            className="rounded-full border border-zinc-200 px-3 py-1 text-sm dark:border-zinc-800"
+            className="rounded-full border border-line px-3 py-1 text-sm"
           >
             {skill}
           </li>
