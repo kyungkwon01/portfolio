@@ -1,5 +1,3 @@
-const skills = ['Skill one', 'Skill two', 'Skill three']
-
 function About() {
   return (
     <section id="about" className="border-t border-line py-20">
@@ -7,19 +5,11 @@ function About() {
         About
       </h2>
       <p className="max-w-2xl text-lg leading-relaxed">
-        A short paragraph about your background, what you're working on now,
-        and what kind of work you're looking for.
+        I'm a front-end developer in e-commerce, where I've learned how much
+        small UX decisions shape what customers do. I'm looking for front-end
+        or full-stack roles on teams that care about fast, accessible,
+        easy-to-use products.
       </p>
-      <ul className="mt-8 flex flex-wrap gap-2">
-        {skills.map((skill) => (
-          <li
-            key={skill}
-            className="rounded-full border border-line px-3 py-1 text-sm"
-          >
-            {skill}
-          </li>
-        ))}
-      </ul>
     </section>
   )
 }
