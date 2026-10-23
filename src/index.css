@@ -16,6 +16,15 @@
   --color-on-accent: #ffffff;
   --color-chip: #e8eeff;
   --color-chip-ink: #2238a8;
+
+  /* Typing caret in the hero. */
+  --animate-blink: blink 1s step-end infinite;
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
 }
 
 /* index.html sets data-theme from the saved choice or the OS setting. */
