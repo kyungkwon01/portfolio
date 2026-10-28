@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import ThemeToggle from './ThemeToggle'
 
-const sections = ['projects', 'about', 'skills', 'contact']
+const sections = ['about', 'projects', 'skills', 'contact']
 
 function Header() {
   const [open, setOpen] = useState(false)
