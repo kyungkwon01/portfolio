@@ -33,7 +33,8 @@ function Hero() {
         </span>
       </h1>
       <p className="mt-6 max-w-xl text-lg leading-relaxed">
-       Front-End Developer
+        Front-end developer focused on React, TypeScript, and the details
+        that make interfaces feel effortless.
       </p>
       <div className="mt-10 flex flex-wrap gap-3">
         <a
