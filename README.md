@@ -1,75 +1,43 @@
-# React + TypeScript + Vite
+# Kyung Kwon's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal site, featuring my projects, skills, and a way to get in touch. I'm a front-end developer focused on React, TypeScript, and accessible interfaces.
 
-Currently, two official plugins are available:
+**Live site:** https://kyungkwon01.github.io/portfolio/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **Light and dark themes:** follows the system setting until a visitor picks a theme, then remembers it. The theme is set before the first paint, so the page never flashes the wrong colors.
+- **Draggable project carousel:** drag with a mouse or swipe on touch screens, with cards that glide into place.
+- **Typing name animation:** skipped for visitors who prefer reduced motion.
+- **Contact form:** sends messages through FormSubmit, so the site doesn't need its own backend.
+- **Responsive layout:** includes mobile navigation.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Built with
 
-## Expanding the ESLint configuration
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Simple Icons
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Add a project
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Add an entry to [`src/data/projects.ts`](src/data/projects.ts). To include a thumbnail, put a 16:10 image in `src/assets/projects` and import it there.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Run it locally
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Lint and build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run lint
+npm run build
 ```
+
+## Deploy
+
+Every push to `main` runs the linter, builds the site, and deploys it to GitHub Pages through [GitHub Actions](.github/workflows/deploy.yml).
