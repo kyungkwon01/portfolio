@@ -1,28 +1,27 @@
+import swatchproofImage from '../assets/projects/swatchproof.png'
+
 export type Project = {
   title: string
   description: string
   tags: string[]
   link?: string
   repo?: string
+  // A 16:10 screenshot shown at the top of the card.
+  image?: { src: string; alt: string }
 }
 
-// Add a project by adding an entry here. Replace these placeholders with your own work.
+// Add a project by adding an entry here.
 export const projects: Project[] = [
   {
-    title: 'Project one',
-    description: 'One or two sentences on what it does and what you built.',
-    tags: ['React', 'TypeScript'],
-    link: 'https://example.com',
-    repo: 'https://github.com/',
-  },
-  {
-    title: 'Project two',
-    description: 'What problem it solves and the interesting part of how.',
-    tags: ['Node.js'],
-  },
-  {
-    title: 'Project three',
-    description: 'A short, specific summary beats a long, vague one.',
-    tags: ['Python'],
+    title: 'Swatchproof',
+    description:
+      'Turns one brand color into an accessible palette, with WCAG contrast checks and color blindness simulation. Uses custom OKLCH color math and runs entirely in the browser.',
+    tags: ['React', 'TypeScript', 'Accessibility'],
+    link: 'https://kyungkwon01.github.io/swatchproof/',
+    repo: 'https://github.com/kyungkwon01/swatchproof',
+    image: {
+      src: swatchproofImage,
+      alt: 'Swatchproof showing a rose color palette and light and dark interface previews',
+    },
   },
 ]

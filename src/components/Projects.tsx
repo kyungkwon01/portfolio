@@ -93,24 +93,26 @@ function Projects() {
         <h2 className="text-sm font-semibold uppercase tracking-widest text-muted">
           Projects
         </h2>
-        <div className="flex gap-2">
-          <button
-            type="button"
-            aria-label="Previous projects"
-            onClick={() => scroll(-1)}
-            className={arrowClass}
-          >
-            ←
-          </button>
-          <button
-            type="button"
-            aria-label="Next projects"
-            onClick={() => scroll(1)}
-            className={arrowClass}
-          >
-            →
-          </button>
-        </div>
+        {projects.length > 1 && (
+          <div className="flex gap-2">
+            <button
+              type="button"
+              aria-label="Previous projects"
+              onClick={() => scroll(-1)}
+              className={arrowClass}
+            >
+              ←
+            </button>
+            <button
+              type="button"
+              aria-label="Next projects"
+              onClick={() => scroll(1)}
+              className={arrowClass}
+            >
+              →
+            </button>
+          </div>
+        )}
       </div>
       <ul
         ref={listRef}
@@ -127,8 +129,19 @@ function Projects() {
         {projects.map((project) => (
           <li
             key={project.title}
-            className="flex w-72 shrink-0 snap-start flex-col rounded-2xl border border-line p-6 transition hover:border-line-strong hover:shadow-sm sm:w-80"
+            className="flex w-72 shrink-0 snap-start flex-col overflow-hidden rounded-2xl border border-line p-6 transition hover:border-line-strong hover:shadow-sm sm:w-80"
           >
+            {project.image && (
+              // Negative margins cancel the card's padding so the image reaches its edges.
+              <img
+                src={project.image.src}
+                alt={project.image.alt}
+                width={960}
+                height={600}
+                loading="lazy"
+                className="-mx-6 -mt-6 mb-5 aspect-[16/10] w-[calc(100%+3rem)] max-w-none border-b border-line object-cover object-top"
+              />
+            )}
             <h3 className="text-lg font-semibold text-ink">
               {project.title}
             </h3>
